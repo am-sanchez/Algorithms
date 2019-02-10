@@ -1,0 +1,56 @@
+
+The Alternating Disks Problem:
+Input: a list L of n pairs of disks alternating dark and light.
+Ouput: The list L with all light elements moved to the left and all dark elements moved to the right.
+	  
+
+*** LAWNMOWER ALGORITHM PSEUDOCODE*** 
+	
+
+def alternating_disk(n,L)
+	i=0							+1
+	numSwaps = 0 						 +1
+	for i in n:						(n - 0) + 1
+		L[i*2]= 'D'			 		+1
+		L[i*2+1]= 'L'					+1
+		
+#ALGORITHM BEGIN******************************************************************
+	for i in range (0,2*n):					(|2n-0| + 1) *( [(|2n-i-i|+1)*5] + [(|i-j-1|+1)*5] )				
+		#Go right        		 
+		for j in range (i, 2*n-i):				|2n-i|+1 * 5	   
+			if (L[j] == 'D'and L[j+1] == 'L')			1 + max(0,4)
+				temp = L[j]			   
+				L[j] = L[j+1]			  
+				L[j+1] = temp			   
+				numSwaps++			    
+		# Go left		
+		for k in range (j-1,i,-1):				|i-j-1|+1 * 5
+			if (L[k] == 'L'and L[k-1] == 'D')			1 + max(0,4)	
+				temp = L[k]			
+				L[k] = L[k-1]			
+				L[k-1] = temp			
+				numSwaps++
+
+	# increment outer for loop again 
+	i++							+1
+#ALGORITHM END ***********************************************************************
+	
+	for i in (n*2)						2n-1 +1	
+		print str(L[i])					+1
+		print "Number of swaps: %d" % numSwaps		+1
+				
+	
+Calculation:
+
+	(|2n-0| + 1) * ([(|2n-i-i|+1)*5] *  [(|i-j-1|+1)*5] )
+	(2n + 1)     *  [ 5(2n-2i+1) 	 * 5(i-j) ]
+	
+	
+
+
+
+		
+			
+		
+	   
+	   

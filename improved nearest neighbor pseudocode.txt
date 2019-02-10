@@ -1,0 +1,22 @@
+Euclidean traveling salesperson problem: Improved Nearest Neighbor algorithm
+
+INPUT: a positive integer n and a list P of n distinct points 
+		representing vertices of a Euclidean graph
+OUTPUT: a list of n points from P representing a Hamiltonian 
+		cycle of minimum total weight for the graph.
+
+
+<find two vertices with maximal distance, A and B>
+
+
+<starting at A,	let V = current node >
+
+<While all vertices have not been visited>
+
+	<Starting from V, travel to next unvisited vertex with shortest distance>
+		<if there is a tie, randomly choose the vertex to travel to>
+
+<travel back to A>
+
+<output result>
+

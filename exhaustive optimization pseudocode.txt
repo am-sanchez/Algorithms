@@ -1,0 +1,26 @@
+Euclidean traveling salesperson problem: exhaustive optimization algorithm
+
+INPUT: a positive integer n and a list P of n distinct points 
+		representing vertices of a Euclidean graph
+OUTPUT: a list of n points from P representing a Hamiltonian 
+		cycle of minimum total weight for the graph.
+
+
+<read in all verticies>
+
+	<find maximal distance between 2 vertices in input set, maxDist>
+	<to find first candidate weight, n * maxDist >
+
+<generate all permutations of input>
+
+	<calculate weight of current hamiltonian cycle = weight of edges 
+		in permutation + source vertex>
+	<if best == none or currWeight < best:
+		best = currWeight
+		bestSet = current permutation + sourceVertex >
+
+output best
+output bestSet
+
+n = 5
+[0] [1] [2] [3] [4]
